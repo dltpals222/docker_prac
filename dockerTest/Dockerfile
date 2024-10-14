@@ -1,7 +1,7 @@
 FROM alpine:latest
 
 # Docker CLI 설치
-RUN apk add --no-cache docker-cli bash
+RUN apk add --no-cache docker-cli git
 
 # 작업 디렉토리 설정
 WORKDIR /app
@@ -10,4 +10,4 @@ WORKDIR /app
 COPY . .
 
 # 컨테이너 시작 시 실행할 명령 지정
-CMD ["/bin/bash"]
+CMD ["sh", "start.sh"]
